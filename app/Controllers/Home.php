@@ -2,6 +2,8 @@
 
 namespace App\Controllers;
 
+use App\Models\User;
+
 class Home extends BaseController
 {
     public function index(): string
@@ -10,6 +12,9 @@ class Home extends BaseController
     }
 
     public function users(){
-        return view('frontend/pages/users/user');
+        $userModel = new User();
+        $users = $userModel->paginate(10);
+        $pager = $userModel->pager;
+        return view('frontend/pages/users/user', compact('users', 'pager'));
     }
 }

@@ -2,6 +2,6 @@
 
 <?= $this->section('content') ?>
 
-<a href="<?= base_url('/load-more-data') ?>">User List</a>
+<a class="btn btn-success" href="<?= base_url('/load-more-data') ?>">User List</a>
 
 <?= $this->endSection() ?>
