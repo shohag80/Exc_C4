@@ -42,4 +42,11 @@ class User extends Model
     // protected $afterFind      = [];
     // protected $beforeDelete   = [];
     // protected $afterDelete    = [];
+
+    public function getData($start, $limit)
+    {
+        // Get data with offset and limit for pagination
+        return $this->orderBy('id', 'ASC')
+                    ->findAll($limit, $start); // Fetch $limit number of rows starting from $start
+    }
 }

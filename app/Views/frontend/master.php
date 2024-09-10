@@ -9,8 +9,8 @@
     <link rel="shortcut icon" type="image/png" href="/favicon.ico">
 
     <!-- STYLES -->
-
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="<?php echo base_url('assets/css/custom.css') ?>">
 </head>
 
 <body>
@@ -40,22 +40,8 @@
 
     </footer>
 
-    <!-- SCRIPTS -->
-
-    <script {csp-script-nonce}>
-        document.getElementById("menuToggle").addEventListener('click', toggleMenu);
-
-        function toggleMenu() {
-            var menuItems = document.getElementsByClassName('menu-item');
-            for (var i = 0; i < menuItems.length; i++) {
-                var menuItem = menuItems[i];
-                menuItem.classList.toggle("hidden");
-            }
-        }
-    </script>
-
-    <!-- -->
-
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <?= $this->renderSection('script') ?>
 </body>
 
 </html>
